@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="http://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/style1.css">
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+
+    <title>Positive Pay</title>
+
+</head>
+
+<body>
+    <div class="container gx-1 gx-lg-0 mt-3 mt-lg-5 my-auto">
+        <div class="row mt-2 justify-content-center">
+            <div class="col-lg-10">
+                <div class="row justify-content-center ">
+                    <div class="col-12 col-lg-5 text-center">
+                        <img class="mb-3 img-fluid " style="width:300px; margin-top:-3rem"
+                            src="~/Images/WebDecoratives/Work risk-free.svg" />
+                        <h3>Inquire Positive Pay</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquamipsa eos
+                            nesciunt
+                        </p>
+                    </div>
+                    <!-- 1st page -->
+                    <div id="firstPage" class="col-12 col-lg-8 ">
+
+                        <div class="row mb-2">
+                            <label for="tranAmount" class="col-sm-12 col-form-label">Select your account</label>
+                            <div class="col-sm-12 mb-2">
+
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Please select</option>
+                                    <option value="">4000151818158236</option>
+                                    <option value="">9577445338254589</option>
+                                    <option value="">1235489818021458</option>
+                                    <option value="">1235489158236111</option>
+                                    <option value="">4533825382544453</option>
+                                    <option value="">7445338254553684</option>
+                                    <option value="">0248891234486685</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <label for="tranAmount" class="col-sm-12 col-form-label">Cheque Number</label>
+                            <div class="col-sm-12 mb-2">
+                                <input type="text" class="form-control" id="paymentTypeCon">
+                            </div>
+                            <div class="row my-5 last-row">
+                                <div class="col-12">
+
+                                    <a class="btn btn-dark float-start" href="@Url.Action(" CardSettings", "Home" )">
+                                        Back
+                                    </a>
+                                    <a id="firstNext" class="btn btn-primary  float-end"> Next </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2nd page -->
+                    <div hidden id="secondPage" class="col-12 col-lg-8 mt-3 px-5">
+                        <div class="row mt-2">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>Delete Positive Pay</h2>
+                                </div>
+                            </div>
+                            <div class="col-12">
+
+                                <div class="row mb-0">
+                                    <label for="paymentType" class="col-sm-12 col-form-label">Inquiry/Delete
+                                        Positive
+                                        Pay</label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center mt-4">
+
+                            <div class="col-12">
+
+                                <table id="CASA"
+                                    class="table table-borderless table-hover p-lg-2 p-0 shadow-sm rounded-8 bg-white"
+                                    style="width:100%">
+                                    <thead class="bg-dark text-white rounded-8">
+                                        <tr style="text-align:center">
+                                            <th class="small">Delete</th>
+                                            <th class="small">Status</th>
+                                            <th class="small">PayTo</th>
+                                            <th class="small">Amount(RM)</th>
+                                            <th class="small">Date of Cheque</th>
+                                            <th class="small">Date of Cheque Cleared</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="text-align:center">
+                                            <td>
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault1">
+                                            </td>
+                                            <td class="title">Stale</td>
+                                            <td class="title">test</td>
+                                            <td class="text-danger">1000000.00</td>
+                                            <td class="title">01-01-2021</td>
+                                            <td class="title">N/A</td>
+                                        </tr>
+                                        <tr style="text-align:center">
+                                            <td>
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault1">
+                                            </td>
+                                            <td class="title">Stale</td>
+                                            <td class="title">test</td>
+                                            <td class="text-danger">1000000.00</td>
+                                            <td class="title">01-01-2021</td>
+                                            <td class="title">N/A</td>
+                                        </tr>
+                                        <tr style="text-align:center">
+                                            <td>
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault1">
+                                            </td>
+                                            <td class="title">Stale</td>
+                                            <td class="title">test</td>
+                                            <td class="text-danger">1000000.00</td>
+                                            <td class="title">01-01-2021</td>
+                                            <td class="title">N/A</td>
+                                        </tr>
+                                        <tr style="text-align:center">
+                                            <td>
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault1">
+                                            </td>
+                                            <td class="title">Stale</td>
+                                            <td class="title">test</td>
+                                            <td class="text-danger">1000000.00</td>
+                                            <td class="title">01-01-2021</td>
+                                            <td class="title">N/A</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                                <div class="row my-5 last-row">
+                                    <div class="col-12">
+
+                                        <a class="btn btn-dark float-start" href="@Url.Action(" CardSettings", "Home"
+                                            )"> Back
+                                        </a>
+                                        <a id="btnDel" class="btn btn-primary  float-end"> Delete </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- 3th page -->
+                    <div hidden id="thirdPage" class="col-12 col-lg-8 mt-3 px-5">
+                        <h3>Confirm Deletion</h3>
+                        <div class="row mb-2">
+                            <label class="col-sm-12 col-form-label">Account Number</label>
+                            <div class="info col-sm-12 my-1">
+                                <input type="text" disabled class="form-control mb-2" placeholder="Address 1"
+                                    value="3213256456465">
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <label class="col-sm-12 col-form-label">Name</label>
+                            <div class="info col-sm-12 my-1">
+                                <input type="text" disabled class="form-control mb-2" placeholder="Address 1"
+                                    value="Kwek Kian Sheng">
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <label class="col-sm-12 col-form-label">Cheque No</label>
+                            <div class="info col-sm-12 my-1">
+                                <input type="text" disabled class="form-control mb-2" placeholder="Address 1"
+                                    value="3213256456465">
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <label class="col-sm-12 col-form-label">Pay to</label>
+                            <div class="info col-sm-12 my-1">
+                                <input type="text" disabled class="form-control mb-2" placeholder="Address 1"
+                                    value="Kwek Kian Sheng">
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <label class="col-sm-12 col-form-label">Amount</label>
+                            <div class="info col-sm-12 my-1">
+                                <input type="text" disabled class="form-control mb-2" placeholder="Address 1"
+                                    value="3213256456465">
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <label class="col-sm-12 col-form-label">Date</label>
+                            <div class="info col-sm-12 my-1">
+                                <input type="text" disabled class="form-control mb-2" placeholder="Address 1"
+                                    value="Kwek Kian Sheng">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <label for="auth" class="col-sm-3 col-form-label">Approve this transacion with</label>
+                            <div class="col-sm-9">
+                                <select class="form-select" aria-label="Default select example" id="auth">
+
+                                    <option value="pac">PAC</option>
+                                    <option value="token">Hard Token</option>
+                                    <option value="secure">Secured SignIn</option>
+                                    <option value="noti">Push Notification</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-2" id="PAC">
+                            <label for="PAC" class="col-sm-3 col-form-label"> <img src="/picture/otp.png" alt=""
+                                    width="100" height="100"></label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="PAC">
+                                <p class="text-muted">A 6 digit PAC will be sent to your registered mobile phone
+                                    number
+                                    *****6168. Please click "Request PAC" if you wish to proceed</p>
+                            </div>
+                            <div class="col-sm-3 text-end text-lg-center mt-0 mt-lg-0">
+                                <a class="btn btn-info pac text-white float-lg-end">Request PAC</a>
+                            </div>
+                        </div>
+                        <div class="row mb-2 d-none" id="token">
+                            <label for="hToken" class="col-sm-3 col-form-label"><img src="/picture/securesigntoken.png"
+                                    alt="" width="90" height="120"></label>
+                            <div class="col-sm-9">
+                                <p class="text-muted">Switch on your SecureSign token and follow the instrution
+                                    below to
+                                    generate on your SecureSign Code.</p>
+                                <ol>
+                                    <li>Press "sign" button. You will see a '1' display on the screen.</li>
+                                    <li>Enter xxxxx and press 'OK'.</li>
+                                    <li>You will see a '2" dispaly on screen.</li>
+                                    <li>Enter xxxx and press 'OK.'</li>
+                                    <li>The SecureSign will be displayed on screen.</li>
+                                </ol>
+                                <input type="text" class="form-control" id="hToken"
+                                    placeholder="Enter your SecureSign Code">
+                            </div>
+                        </div>
+                        <div class="row mb-2 d-none" id="noti">
+                            <label for="notification" class="col-sm-3 col-form-label"><img src="/picture/success.png"
+                                    alt="" width="90" height="90"></label>
+                            <div class="col-sm-6">
+                                <p>A push notification will be sent to your mobile phone. Please verify the details
+                                    at
+                                    your PB SecureSign screen before approving transaction.</p>
+
+                            </div>
+                            <div class="col-sm-3">
+                                <a class="btn btn-info pac text-white float-lg-end" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop">Push Notification</a>
+
+                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="staticBackdropLabel">PB SecureSign</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 d-flex justify-content-center">
+                                                            <img src="/picture/animation_500_kugn1p08.gif" alt=""
+                                                                width="300" height="300">
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <p>Please check your mobile device (Iphone12) for a push
+                                                                notification to approve the transacion</p>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="progress">
+                                                                <div class="progress-bar bg-danger" role="progressbar"
+                                                                    aria-valuenow="0" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="width:0%">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2 d-none" id="secure">
+                            <label for="secure" class="col-sm-3 col-form-label"><img src="/picture/kp2.png" alt=""
+                                    width="90" height="90"></label>
+                            <div class="col-sm-9">
+                                <p class="text-muted">Open your PB engage mobile app and follow the instruction
+                                    below to
+                                    generate your SecurePac</p>
+                                <ol>
+                                    <li>Launch your PB engage mobile app.</li>
+                                    <li>From the side menu, select "PB SecureSign".</li>
+                                    <li>Verify the transaction details before you click "proceed".</li>
+                                    <li>Enter your SecurePIN or authentucate with your fingerpint/Face ID</li>
+                                    <li>The 6 digits SecurePAC will be displayed on the screen</li>
+                                </ol>
+                                <input type="text" class="form-control" id="secure" placeholder="Enter SecurePAC">
+                            </div>
+                        </div>
+                        <div class="row mt-2 pb-5 last-row">
+                            <div class="col-6 text-start text-lg-start mt-3">
+                                <button class="btn btn-dark mb-3 mb-lg-0 mt-0 mt-1g-0 btnBackPac">Back</button>
+                            </div>
+                            <div class="col-6 text-end text-lg-end mt-3">
+                                <button id="confirmBtn"
+                                    class="btn btn-primary mb-3 mb-1g-0 mt-1g-0 tranBtn">Confirm</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- 4th page -->
+                    <div hidden id="fourthPage" class="col-12 col-lg-8 mt-3 px-5">
+
+                        <div class="p-5 shadow bg-white rounded-8">
+
+                            <div class="row detailzRow d-flex mb-4">
+
+                                <div class="row logoRow">
+
+                                    <div class="col-lg-1 col-2 ps-0 mb-3 checkIconDIV">
+
+                                        <table style="height: 100%; width: 100%;">
+
+                                            <tbody>
+
+                                                <tr>
+
+                                                    <td id="success" style="vertical-align: middle;">
+                                                        <img src="~/Images/WebDecoratives/success.png" alt=""
+                                                            width="60px" height="60px">
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+
+                                    <div class="col-lg-8 ps-4 col-md-12 col-sm-12 col-xs-10 checkTextDIV mb-3">
+
+                                        <table style="height: 100%; width: 100%;">
+
+                                            <tbody>
+
+                                                <tr>
+
+                                                    <td style="vertical-align: middle;">
+                                                        <h4 class="lbl1">Cheque Deleted Successfully</h4>
+                                                        <p class="text-muted mb-0">4 May 2018, 12:59:12pm</p>
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Reference Number</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>RR232382989FH</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Name</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>Kwek Kian Sheng</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Accounting Holding Branch</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>KL Main Office</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Type of Account</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>Savings</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Account</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>xxxxxxxxx-xxxx</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row my-5 last-row">
+                            <div class="col-12">
+                                <a class="btn btn-dark float-start"> Print </a>
+                                <a id="thirdNext" class="btn btn-primary  float-end" href="@Url.Action("
+                                    CardSettings", "Home" )"> Complete </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/magnific-popup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+    <script>
+        $('#firstNext').on('click', function () {
+
+            $('#secondPage').prop('hidden', false);
+            $('#thirdPage').prop('hidden', true);
+            $('#firstPage').prop('hidden', true);
+            $('#fourthPage').prop('hidden', true);
+
+        })
+        $('#btnDel').on('click', function () {
+
+            $('#secondPage').prop('hidden', true);
+            $('#thirdPage').prop('hidden', false);
+            $('#firstPage').prop('hidden', true);
+            $('#fourthPage').prop('hidden', true);
+
+        })
+        $('#confirmBtn').on('click', function () {
+
+            $('#secondPage').prop('hidden', true);
+            $('#thirdPage').prop('hidden', true);
+            $('#firstPage').prop('hidden', true);
+            $('#fourthPage').prop('hidden', false);
+
+        })
+
+
+        $('#deleteCheq').on('click', function () {
+            console.log('test');
+            Swal.fire(
+                'Cheque deleted',
+                'OTP sent to your phone number 012 - * * * * 123',
+                'error'
+            )
+        })
+        $('#confirmBtn').on('click', function () {
+            console.log('test');
+            Swal.fire(
+                'Cheque deleted',
+                'Deleted succesfully',
+                'success'
+            )
+        })
+
+        $("#auth").change(function () {
+            console.log("test");
+            var cases = $("#auth option:selected").val();
+            if (cases == "pac")
+                $("#PAC").removeClass("d-none");
+            $("#secure").addClass("d-none");
+            $("#noti").addClass("d-none");
+            $("#token").addClass("d-none");
+            if (cases == "token") {
+                $("#token").removeClass("d-none");
+                $("#PAC").addClass("d-none");
+                $("#signin").addClass("d-none");
+                $("#noti").addClass("d-none");
+            }
+            if (cases == "secure") {
+                $("#secure").removeClass("d-none");
+                $("#PAC").addClass("d-none");
+                $("#token").addClass("d-none");
+                $("#noti").addClass("d-none");
+            }
+            if (cases == "noti") {
+                $("#noti").removeClass("d-none");
+                $("#PAC").addClass("d-none");
+                $("#token").addClass("d-none");
+                $("#secure").addClass("d-none");
+            }
+        }
+        );
+        var progressBar = $('.progress-bar');
+        var progressNumber = 0;
+
+        setInterval(function () {
+            progressNumber++;
+            progressBar.css('width', progressNumber + '%');
+            progressBar.attr('aria-valuenow', progressNumber);
+        }, 500);
+
+    </script>
+
+</body>
+
+</html>
