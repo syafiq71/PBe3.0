@@ -1,0 +1,435 @@
+
+@{
+    ViewBag.Title = "MailingAddress";
+}
+<div class="d-none d-lg-block" style="height:5vh;"></div>
+
+
+<div class="container gx-1 gx-lg-0 mt-3 mt-lg-5 my-auto">
+    <div class="row mt-2 justify-content-center">
+        <div class="col-lg-10">
+            <div class="row justify-content-center ">
+                <div class="col-12 col-lg-5 text-center">
+                    <img class="mb-3 img-fluid " style="width:300px; margin-top:-3rem" src="~/Images/WebDecoratives/Work risk-free.svg" />
+                    <h3>Loan Redraw</h3>
+                    <p class="mb-4">
+  
+                    </p>
+                </div>
+                <div id="firstPage" class="col-12 col-lg-8 ">
+                    <div class="row mb-2">
+                        <label for="tranAmount" class="col-sm-12 col-form-label">Select your account</label>
+                        <div class="col-sm-12 mb-2">
+
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Please select</option>
+                                <option value="">4000151818158236</option>
+                                <option value="">9577445338254589</option>
+                                <option value="">1235489818021458</option>
+                                <option value="">1235489158236111</option>
+                                <option value="">4533825382544453</option>
+                                <option value="">7445338254553684</option>
+                                <option value="">0248891234486685</option>
+
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="row my-5 last-row">
+                        <div class="col-12">
+                            <a class="btn btn-dark float-start" href="@Url.Action("CardSettings", "Home")"> Back </a>
+                            <a data-bs-toggle="modal" data-bs-target="#exampleModal" id="firstNext" class="btn btn-primary  float-end"> Next </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div hidden id="secondPage" class="col-12 col-lg-8 ">
+                    <div class="row mb-2">
+                        <label for="tranAmount" class="col-sm-12 col-form-label">Name of Borrower</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control mb-2" disabled placeholder="Name of Borrower" value="TAN KIM LENG">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="tranAmount" class="col-sm-12 col-form-label">Account Holding Branch	</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control mb-2" disabled placeholder="Account Holding Branchn" value="JLN SULTAN SULAIMAN">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="tranAmount" class="col-sm-12 col-form-label">To Account</label>
+                        <div class="col-sm-12 mb-2">
+
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Please select</option>
+                                <option value="">4000151818158236</option>
+                                <option value="">9577445338254589</option>
+                                <option value="">1235489818021458</option>
+                                <option value="">1235489158236111</option>
+                                <option value="">4533825382544453</option>
+                                <option value="">7445338254553684</option>
+                                <option value="">0248891234486685</option>
+
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="tranAmount" class="col-sm-12 col-form-label">Redraw Amount (Maximum Amount: RM 48,000.00)</label>
+                        <div class="col-sm-12">
+                            <input type="Number" class="form-control mb-2" >
+                            <div id="emailHelp" class="form-text">
+                                (Minimum of RM5,000-00 and in multiples of RM1,000-00)
+                                Note: Amount must not be more than the Available Redraw Amount.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label for="auth" class="col-sm-3 col-form-label">Approve this transacion with</label>
+                        <div class="col-sm-9">
+                            <select class="form-select" aria-label="Default select example" id="auth">
+
+                                <option value="pac">PAC</option>
+                                <option value="token">Hard Token</option>
+                                <option value="secure">Secured SignIn</option>
+                                <option value="noti">Push Notification</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-2" id="PAC">
+                        <label for="PAC" class="col-sm-3 col-form-label"> <img src="~/Images/WebsiteImages/otp.png" alt="" width="100" height="100"></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="PAC">
+                            <p class="text-muted">A 6 digit PAC will be sent to your registered mobile phone number *****6168. Please click "Request PAC" if you wish to proceed</p>
+                        </div>
+                        <div class="col-sm-3 text-end text-lg-center mt-0 mt-lg-0">
+                            <a class="btn btn-info pac text-white float-lg-end">Request PAC</a>
+                        </div>
+                    </div>
+                    <div class="row mb-2 d-none" id="token">
+                        <label for="hToken" class="col-sm-3 col-form-label"><img src="~/Images/WebsiteImages/securesigntoken.png" alt="" width="90" height="120"></label>
+                        <div class="col-sm-9">
+                            <p class="text-muted">Switch on your SecureSign token and follow the instrution below to generate on your SecureSign Code.</p>
+                            <ol>
+                                <li>Press "sign" button. You will see a '1' display on the screen.</li>
+                                <li>Enter xxxxx and press 'OK'.</li>
+                                <li>You will see a '2" dispaly on screen.</li>
+                                <li>Enter xxxx and press 'OK.'</li>
+                                <li>The SecureSign will be displayed on screen.</li>
+                            </ol>
+                            <input type="text" class="form-control" id="hToken" placeholder="Enter your SecureSign Code">
+                        </div>
+                    </div>
+                    <div class="row mb-2 d-none" id="noti">
+                        <label for="notification" class="col-sm-3 col-form-label"><img src="~/Images/WebsiteImages/success.png" alt="" width="90" height="90"></label>
+                        <div class="col-sm-6">
+                            <p>A push notification will be sent to your mobile phone. Please verify the details at your PB SecureSign screen before approving transaction.</p>
+                            <!-- <a class="btn btn-info pac text-white float-lg-end">Secure SignIn</a> -->
+                        </div>
+                        <div class="col-sm-3">
+                            <a class="btn btn-info text-white float-lg-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Push Notification</a>
+                            <!-- Modal -->
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel">PB SecureSign</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-12 d-flex justify-content-center">
+                                                        <img src="~/Images/WebsiteImages/animation_500_kugn1p08.gif" alt="" width="300" height="300">
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <p>Please check your mobile device (Iphone12) for a push notification to approve the transacion</p>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="progress">
+                                                            <div class="progress-bar bg-danger active" role="progressbar" aria-valuenow="0"
+                                                                 aria-valuemin="0" aria-valuemax="100" style="width:0%">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2 d-none" id="secure">
+                        <label for="secure" class="col-sm-3 col-form-label"><img src="~/Images/WebsiteImages/kp2.png" alt="" width="90" height="90"></label>
+                        <div class="col-sm-9">
+                            <p class="text-muted">Open your PB engage mobile app and follow the instruction below to generate your SecurePac</p>
+                            <ol>
+                                <li>Launch your PB engage mobile app.</li>
+                                <li>From the side menu, select "PB SecureSign".</li>
+                                <li>Verify the transaction details before you click "proceed".</li>
+                                <li>Enter your SecurePIN or authentucate with your fingerpint/Face ID</li>
+                                <li>The 6 digits SecurePAC will be displayed on the screen</li>
+                            </ol>
+                            <input type="text" class="form-control" id="secure" placeholder="Enter SecurePAC">
+                        </div>
+                    </div>
+
+                    <div class="row my-5 last-row">
+                        <div class="col-12">
+                            <a class="btn btn-dark float-start" href="@Url.Action("CardSettings", "Home")"> Back </a>
+                            <a id="secondNext" class="btn btn-primary  float-end"> Next </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div hidden id="thirdPage" class="col-12 col-lg-8 mt-3 px-5">
+                    <div class="p-5 shadow bg-white rounded-8">
+                        <div class="row detailzRow d-flex mb-2">
+
+                            <div class="row logoRow">
+                                <div class="col-lg-2 col-2 ps-0 mb-3 checkIconDIV">
+                                    <table style="height: 100%; width: 100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td id="success" style="vertical-align: middle;">
+                                                    <img src="~/Images/WebDecoratives/success.png" alt="" width="60px" height="60px">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-10 checkTextDIV mb-3">
+                                    <table style="height: 100%; width: 100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="vertical-align: middle;">
+                                                    <h4 class="lbl1">Loan Redraw Successful</h4>
+                                                    <p class="text-muted mb-0">4 May 2018, 12:59:12pm</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row detailsRow">
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                <label>Reference Number</label>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                <label>RR232382989FH</label>
+                            </div>
+                        </div>
+
+                        <div class="row detailsRow">
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                <label>Name of Borrower</label>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                <label>Kwek Kian Sheng</label>
+                            </div>
+
+                        </div>
+
+                        <div class="row detailsRow">
+
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                <label>Accounting Holding Branch</label>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                <label>KL Main Office</label>
+                            </div>
+
+                        </div>
+
+                        <div class="row detailsRow">
+
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                <label>From of Account</label>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                <label>292343534331231</label>
+                            </div>
+
+                        </div>
+
+                        <div class="row detailsRow">
+
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                <label>To Account</label>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                <label>477756423223</label>
+                            </div>
+
+                        </div>
+                        <div class="row detailsRow">
+
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                <label>Redraw Amount</label>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                <label>RM 5000.00</label>
+                            </div>
+
+                        </div>
+                        <div class="row detailsRow">
+
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                <label>Date and Time</label>
+                            </div>
+
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                <label>1 October 2021</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row my-5 last-row">
+                        <div class="col-12">
+                            <a class="btn btn-dark float-start"> Print </a>
+                            <a id="secondNext" class="btn btn-primary  float-end" href="@Url.Action("CardSettings", "Home")"> Complete </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Redraw Request via Pbe</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        id="modalCloseBtn"></button>
+            </div>
+
+            <div class="modal-body">
+                <label class="modalNotice">Notice:</label>
+
+                <br>
+
+                <ol>
+                    <li class="modalLi">
+                        All Redraw Request will be routed back to the Loan Account Holding Branch for
+                        processing.
+                    </li>
+
+                    <li class="modalLi">
+                        Upon satisfying all the <a href="#">Term and Condition</a> on Redrawing as per the
+                        Letter of Offer, Branch will then proceed on the request.
+                    </li>
+
+                    <li class="modalLi">
+                        Processing of the Redraw Request will take two (2) days perior submission online before
+                        the date of the proposed redrawing.
+                    </li>
+
+                    <li class="modalLi">
+                        Branch will notify you once your current/savings account has been credited.
+                    </li>
+
+                    <li>
+                        Kindly refer to your Account Holding branch for any queries on the request.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="modalBtn">
+                    Agree and
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/js")
+<script>
+    $(document).ready(function () {
+        $('.mobileNav').each(function () {
+            $(this).removeClass('active');
+        })
+        $('.nav-link').each(function () {
+            $(this).removeClass('active');
+        })
+        $('.profile').each(function () {
+            $(this).addClass('active');
+        });
+        $('.profileMenu').addClass('active');        
+    });
+    $('#modalBtn').on('click', function () {
+            $('#secondPage').attr('hidden', false);
+            $('#firstPage').attr('hidden', true);
+            $('#thirdPage').attr('hidden', true);
+    });
+    $('.pac').on('click', function () {
+        Swal.fire(
+            'OTP is Sent!',
+            'OTP sent to your phone number 012 - * * * * 123',
+            'success'
+        )
+    })
+    $('#secondNext').on('click', function () {
+        Swal.fire(
+            'Success',
+            'Your Transaction Successfully Saved',
+            'success'
+        )
+
+        $('#thirdPage').attr('hidden', false);
+        $('#secondPage').attr('hidden', true);
+        $('#firstPage').attr('hidden', true);
+    })
+    $("#auth").change(function () {
+        console.log("test");
+        var cases = $("#auth option:selected").val();
+        if (cases == "pac")
+            $("#PAC").removeClass("d-none");
+        $("#secure").addClass("d-none");
+        $("#noti").addClass("d-none");
+        $("#token").addClass("d-none");
+        if (cases == "token") {
+            $("#token").removeClass("d-none");
+            $("#PAC").addClass("d-none");
+            $("#signin").addClass("d-none");
+            $("#noti").addClass("d-none");
+        }
+        if (cases == "secure") {
+            $("#secure").removeClass("d-none");
+            $("#PAC").addClass("d-none");
+            $("#token").addClass("d-none");
+            $("#noti").addClass("d-none");
+        }
+        if (cases == "noti") {
+            $("#noti").removeClass("d-none");
+            $("#PAC").addClass("d-none");
+            $("#token").addClass("d-none");
+            $("#secure").addClass("d-none");
+        }
+    });
+
+</script>
+

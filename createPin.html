@@ -1,0 +1,269 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap 5.0 -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+
+    <!-- Style-Puvan -->
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- Fonts -->
+    <link href="http://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+
+    <title>Create Pin</title>
+
+</head>
+
+<body>
+
+    <div class="d-none d-lg-block" style="height:5vh;"></div>
+
+
+    <div class="container gx-1 gx-lg-0 mt-3 mt-lg-5 my-auto">
+        <div class="row mt-2 justify-content-center">
+            <div class="col-lg-10">
+                <div class="row justify-content-center ">
+                    <div class="col-12 col-lg-5 text-center">
+                        <img class="mb-3 img-fluid " style="width:300px; margin-top:-3rem"
+                            src="~/Images/WebDecoratives/Work risk-free.svg" />
+                        <h3>Change Card Pin</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquamipsa eos
+                            nesciunt
+                        </p>
+                    </div>
+                    <div id="firstPage" class="col-12 col-lg-8 ">
+                        <div class="row mb-2">
+                            <label for="tranAmount" class="col-sm-12 col-form-label">Select your account</label>
+                            <div class="col-sm-12 mb-2">
+
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Please select</option>
+                                    <option value="">4000151818158236</option>
+                                    <option value="">9577445338254589</option>
+                                    <option value="">1235489818021458</option>
+                                    <option value="">1235489158236111</option>
+                                    <option value="">4533825382544453</option>
+                                    <option value="">7445338254553684</option>
+                                    <option value="">0248891234486685</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="row my-5 last-row">
+                            <div class="col-12">
+                                <a class="btn btn-dark float-start" href="@Url.Action(" CardSettings", "Home" )"> Back
+                                </a>
+                                <a id="firstNext" class="btn btn-primary  float-end"> Next </a>
+                            </div>
+                        </div>
+                        <div class="col-md-12 ">
+                            <div class="inner-note alert-info p-1">
+                              <h3>Note</h3>
+                              <ul>
+                                  <li>Only active cards added to your PBe account will be displayed.</li>
+                                  <li>If the card is not listed, go to Profile Maintenance, select Manage Profile and click Add/Delete Account function to add the card.</li>
+                          </ul>
+                            </div>       
+                          </div>
+                    </div>
+
+                    <div hidden id="secondPage" class="col-12 col-lg-8 ">
+                        <div class="row mb-2">
+                            <label for="tranAmount" class="col-sm-12 col-form-label">New Pin</label>
+                            <div class="newPin col-sm-12">
+                                <input type="Number" class="form-control mb-2" placeholder="New Pin">
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <label for="tranAmount" class="col-sm-12 col-form-label">OTP</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="PAC">
+                                <span>Didn't get the code</span>
+                                <a href="#" id="ResendPAC" class="text-decoration-none ms-3 mb-2">Resend(1/3)</a>
+                                <p class="text-muted">A 6 digit PAC will be sent to your registered mobile phone number
+                                    *****6168. Please click "Request PAC" if you wish to proceed</p>
+                            </div>
+                            <div class="col-sm-3 text-end text-lg-center mt-0 mt-lg-0">
+                                <a class="btn btn-info pac text-white float-lg-end" id="reqPacBtn">Request PAC</a>
+                            </div>
+                            <div class="mt-0">
+
+
+                            </div>
+                        </div>
+
+                        <div class="row my-5 last-row">
+                            <div class="col-12">
+                                <a class="btn btn-dark float-start" href="@Url.Action(" CardSettings", "Home" )"> Back
+                                </a>
+                                <a id="secondNext" class="btn btn-primary  float-end"> Next </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div hidden id="thirdPage" class="col-12 col-lg-8 mt-3 px-5">
+                        <div class="p-5 shadow bg-white rounded-8">
+
+                            <div class="row detailzRow d-flex mb-4">
+
+                                <div class="row logoRow">
+
+                                    <div class="col-lg-2 col-2 checkIconDIV">
+
+                                        <table style="height: 100%; width: 100%;">
+
+                                            <tbody>
+
+                                                <tr>
+
+                                                    <td id="success" style="vertical-align: middle;">
+                                                        <img src="/puvan/icon/primary/success.png" alt=""
+                                                            width="60px" height="60px">
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-10 checkTextDIV mb-3">
+                                        <table style="height: 100%; width: 100%;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="vertical-align: middle;">
+                                                        <h4 class="lbl1">Pin Changed Successfully</h4>
+                                                        <p class="text-muted mb-0">4 May 2018, 12:59:12pm</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row detailsRow">
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Reference Number</label>
+                                </div>
+    
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>93612322</label>
+                                </div>
+                            </div>
+    
+    
+    
+                            <div class="row detailsRow">
+    
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Card</label>
+                                </div>
+    
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label> XXXXXXX3106</label>
+                                </div>
+    
+                            </div>
+    
+                            <div class="row detailsRow mt-2">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <ul>
+                                        <li class="text-muted">Please take note of the Reference Number for future
+                                            correspondence.</li>
+    
+                                        <li class="text-muted">Your Card PIN has been created successfully and you may
+                                            start using your card.</li>
+                                        <li class="text-muted">Please be informed that you are responsible to safeguard
+                                            your card PIN at all times. To know more about our Card Promotions, please
+                                            visit our website at www.pbebank.com</li>
+    
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row my-5 last-row">
+                            <div class="col-12">
+                                <a class="btn btn-dark float-start"> Print </a>
+                                <a id="secondNext" class="btn btn-primary  float-end" href="@Url.Action("
+                                    CardSettings", "Home" )"> Done </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script>
+        $(document).ready(function () {
+    $('.mobileNav').each(function () {
+        $(this).removeClass('active');
+    })
+    $('.nav-link').each(function () {
+        $(this).removeClass('active');
+    })
+    $('.profile').each(function () {
+        $(this).addClass('active');
+    });
+    $('.profileMenu').addClass('active');
+
+    $('#firstNext').on('click', function () {
+        $('#secondPage').attr('hidden', false);
+        $('#firstPage').attr('hidden', true);
+        $('#thirdPage').attr('hidden', true);
+    });
+    $('#reqPacBtn').on('click', function () {
+        Swal.fire(
+            'OTP is Sent!',
+            'OTP sent to your phone number 012 - * * * * 123',
+            'success'
+        )
+    })
+    $('#secondNext').on('click', function () {
+        Swal.fire(
+            'Success',
+            'Your Transaction Successfully Saved',
+            'success'
+        )
+
+        $('#thirdPage').attr('hidden', false);
+        $('#secondPage').attr('hidden', true);
+        $('#firstPage').attr('hidden', true);
+    })
+});
+    </script>
+
+</body>
+
+</html>

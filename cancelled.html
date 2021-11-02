@@ -1,0 +1,917 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap 5.0 -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+
+    <!-- Style-Puvan -->
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- Fonts -->
+    <link href="http://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+
+    <!-- FlatPickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+
+    <title>Cancelled</title>
+
+    <style>
+        /* success */
+        .checkmark__circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: #7ac142;
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+        }
+
+        .checkmark {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 2;
+            stroke: #fff;
+            stroke-miterlimit: 10;
+            margin: 10% auto;
+            box-shadow: inset 0px 0px 0px #7ac142;
+            animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+        }
+
+        .checkmark__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+        }
+
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: 0
+            }
+        }
+
+        @keyframes scale {
+
+            0%,
+            100% {
+                transform: none
+            }
+
+            50% {
+                transform: scale3d(1.1, 1.1, 1)
+            }
+        }
+
+        @keyframes fill {
+            100% {
+                box-shadow: inset 0px 0px 0px 30px #7ac142
+            }
+        }
+
+        /* failed */
+        .failedmark {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 2;
+            stroke: #fff;
+            stroke-miterlimit: 10;
+            box-shadow: inset 0px 0px 0px #ff0000;
+            animation: fill2 .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+        }
+
+        .failedmark_circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: #ff0000;
+            fill: none;
+            animation: stroke2 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+        }
+
+        .failedmark_check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke2 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+        }
+
+        @keyframes stroke2 {
+            100% {
+                stroke-dashoffset: 0
+            }
+        }
+
+        @keyframes scale {
+
+            0%,
+            100% {
+                transform: none
+            }
+
+            50% {
+                transform: scale3d(1.1, 1.1, 1)
+            }
+        }
+
+        @keyframes fill2 {
+            100% {
+                box-shadow: inset 0px 0px 0px 30px #ff0000
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="d-none d-lg-block" style="height:5vh;"></div>
+
+
+    <div class="container gx-1 gx-lg-0 mt-3 mt-lg-5 my-auto">
+        <div class="row mt-2 justify-content-center">
+            <div class="col-lg-10">
+                <div class="row justify-content-center ">
+                    <div class="col-12 col-lg-5 text-center">
+                        <img class="mb-3 img-fluid " style="width:300px; margin-top:-3rem"
+                            src="~/Images/WebDecoratives/Work risk-free.svg" />
+                        <h3>Cancel Card</h3>
+                        <p>
+                           Cancel any debit or credit card that you currently own.
+                        </p>
+                    </div>
+
+                    <div id="firstPage" class="col-12 col-lg-8 ">
+                        <div class="row mb-2">
+                            <label for="tranAmount" class="col-sm-12 col-form-label">Select your account</label>
+                            <div class="col-sm-12 mb-2">
+
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Please select</option>
+                                    <option value="">4000151818158236</option>
+                                    <option value="">9577445338254589</option>
+                                    <option value="">1235489818021458</option>
+                                    <option value="">1235489158236111</option>
+                                    <option value="">4533825382544453</option>
+                                    <option value="">7445338254553684</option>
+                                    <option value="">0248891234486685</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="row my-5 last-row">
+                            <div class="col-12">
+                                <a class="btn btn-dark float-start" href="@Url.Action(" CardSettings", "Home" )"> Back
+                                </a>
+                                <a id="firstNext" class="btn btn-primary  float-end"> Next </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div hidden id="secondPage" class="col-12 col-lg-8 ">
+
+                        <div class="container height-100 d-flex justify-content-center align-items-center mt-4">
+
+                            <div class="position-relative mx-auto">
+
+                                <div class="row mb-2">
+                                    <label class="col-sm-12 col-form-label">
+                                        Credit Card Number
+                                    </label>
+                                    <div class="col-sm-12 my-1">
+                                        <input type="text" id="cardNumber" class="form-control" name="cardNumber"
+                                            value="4000151818158236">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <label class="col-sm-12 col-form-label">Card Member Name</label>
+                                    <div class="col-sm-12 my-1">
+                                        <input type="text" id="memberName" class="form-control" name="memberName"
+                                            value="Kwek Kian Sheng">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <label class="col-sm-12 col-form-label">Credit Card Status</label>
+                                    <div class="col-sm-12 my-1">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Select</option>
+                                            <option value="">Lost</option>
+                                            <option value="">Stolen</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <label class="col-sm-12 col-form-label">Date of Lost</label>
+                                    <div class="col-sm-12 my-1">
+                                        <input id="effectiveDatePicker1" class="form-control bg-white"
+                                            placeholder="01-JAN-2021" aria-label="effectiveDateInput">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <label class="col-sm-12 col-form-label">
+                                        Place of Lost
+                                    </label>
+                                    <div class="col-sm-12 my-1">
+                                        <input type="text" id="placeLost1" class="form-control" name="placeLost"
+                                            value="Tangkak">
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 rightReference1 my-1">
+                                        <label for="placeLost" id="placeLost2">(Optional)</label>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <label class="col-sm-12 col-form-label">Date Last Used</label>
+                                    <div class="col-sm-12 my-1">
+                                        <input id="effectiveDatePicker2" class="form-control bg-white"
+                                            placeholder="01-JAN-2021" aria-label="effectiveDateInput">
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 rightReference1 my-1">
+                                        <label for="lastUsed" id="lastUsed">(Optional)</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="row mb-2">
+                                    <label class="col-sm-12 col-form-label">
+                                        Amount Last Used (RM)
+                                    </label>
+                                    <div class="col-sm-12 my-1">
+                                        <input type="text" id="amountUsed1" class="form-control" name="amountUsed"
+                                            value="RM 2000.00">
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 rightReference1 my-1">
+                                        <label for="amountUsed" id="amountUsed2">(Optional)</label>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <label class="col-sm-12 col-form-label">
+                                        Merchant and Location Last Used (RM)
+                                    </label>
+                                    <div class="col-sm-12 my-1">
+                                        <input type="text" id="locationUsed1" class="form-control" name="locationUsed"
+                                            value="RM 2000.00">
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 rightReference1 my-1">
+                                        <label for="locationUsed" id="locationUsed2">(Optional)</label>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <label class="col-lg-12 col-md-12 col-sm-12 col-form-label">
+                                        Replacement card required?
+                                    </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 my-1">
+                                        <div class="radio">
+                                            <input id="radio-1" name="radio" type="radio" checked>
+                                            <label for="radio-1" class="radio-label1">
+                                                Yes
+                                            </label>
+                                        </div>
+
+                                        <div class="radio">
+                                            <input id="radio-2" name="radio" type="radio">
+                                            <label for="radio-2" class="radio-label2">
+                                                No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <label class="col-lg-12 col-md-12 col-sm-12 col-form-label">
+                                        Collection of Card
+                                    </label>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 my-1">
+                                        <div class="radio">
+                                            <input id="radio-3" name="radio2" type="radio" checked>
+                                            <label for="radio-3" class="radio-label3">
+                                                Delivery to Existing Mailing Address
+                                            </label>
+                                            <label for="radio-4" class="radio-label4 ms-3">
+                                                (Delivery cannot be made to P. O. Box address / overseas address)
+                                            </label>
+                                        </div>
+
+                                        <div class="radio">
+                                            <input id="radio-5" name="radio2" type="radio">
+                                            <label for="radio-5" class="radio-label5">
+                                                Collect at Public Bank Branch
+                                            </label>
+                                        </div>
+
+                                        <select class="form-select" state-select mt-2"
+                                            aria-label="Default select example" id="selectState">
+                                            <option selected>Select State</option>
+                                            <option value="">Johor</option>
+                                            <option value="">Negeri Sembilan</option>
+                                            <option value="">Selangor</option>
+                                            <option value="">Malacca</option>
+                                            <option value="">Perak</option>
+                                            <option value="">Penang</option>
+                                            <option value="">Terengganu</option>
+                                            <option value="">Sabah</option>
+                                            <option value="">Sarawak</option>
+                                            <option value="">Kelantan</option>
+                                            <option value="">Pahang</option>
+                                        </select>
+
+                                        <select class="form-select branch-select mt-2"
+                                            aria-label="Default select example" id="selectBranch">
+
+                                            <option selected>Select Branch</option>
+
+                                            <!-- <option value="" id="boldState" disabled>Johor</option> -->
+                                            <optgroup label="Johor"></optgroup>
+                                            <option value="">Tangkak</option>
+                                            <option value="">Muar</option>
+
+                                            <!-- <option value="" id="boldState" disabled>Negeri Sembilan</option> -->
+                                            <optgroup label="Negeri Sembilan"></optgroup>
+                                            <option value="">Seremban</option>
+
+                                            <!-- <option value="" id="boldState" disabled>Selangor</option> -->
+                                            <optgroup label="Selangor"></optgroup>
+                                            <option value="">Bangi</option>
+
+                                            <!-- <option value="" id="boldState" disabled>Kedah</option> -->
+                                            <optgroup label="Kedah"></optgroup>
+                                            <option value="">Alor Setar</option>
+                                            <option value="">Kuala Ketil</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row my-5 last-row">
+                            <div class="col-12">
+                                <a class="btn btn-dark float-start" href="@Url.Action(" CardSettings", "Home" )">
+                                    Back
+                                </a>
+                                <a id="secondNext" class="btn btn-primary  float-end"> Submit </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Success -->
+                    <div hidden id="thirdPage" class="col-12 col-lg-8 mt-3 px-5">
+                        <div class="p-5 shadow bg-white rounded-8">
+
+                            <div class="row detailzRow d-flex mb-4">
+
+                                <div class="row logoRow">
+
+                                    <div class="col-lg-2 col-2 checkIconDIV">
+
+                                        <table style="height: 100%; width: 100%;">
+
+                                            <tbody>
+
+                                                <tr>
+                                                    <td>
+
+                                                        <div class="successIcon">
+                                                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 52 52">
+                                                                <circle class="checkmark__circle" cx="26" cy="26" r="25"
+                                                                    fill="none" />
+                                                                <path class="checkmark__check" fill="none"
+                                                                    d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                                                            </svg>
+                                                        </div>
+
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+
+                                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-10 checkTextDIV">
+
+                                        <table style="height: 100%; width: 100%;">
+
+                                            <tbody>
+
+                                                <tr>
+
+                                                    <td style="vertical-align: middle;">
+                                                        <h5 class="lbl1 mt-3">Cancel Card Success</h5>
+                                                        <p class="text-muted">4 May 2018, 12:59:12pm</p>
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Reference Number</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>RR232382989FH</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Card Member Name</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>Kwek Kian Sheng</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Credit Card Number</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>454454333222 (Visa Credit Card)</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Card Member Name</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>Lai Li</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Credit Card Status</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>Lost</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Date of Lost</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>01 October 2021</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Place of Lost</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>-</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Date Last Used</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>-</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Amount Last Used</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>RM 0.00</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Merchant and Location Last Used</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>-</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Replacement card required?</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>Yes</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Collection of Card</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>Delivery to Existing Mailing Address</label>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="row my-5 last-row">
+                            <div class="col-12">
+                                <a class="btn btn-dark float-start"> Print </a>
+                                <a id="thirdNext" class="btn btn-primary  float-end" href="@Url.Action("
+                                    CardSettings", "Home" )"> Done </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Failed -->
+                    <div hidden id="fourthPage" class="col-12 col-lg-8 mt-3 px-5">
+                        <div class="p-5 shadow bg-white rounded-8">
+
+                            <div class="row detailzRow d-flex mb-4">
+
+                                <div class="row logoRow">
+
+                                    <div class="col-lg-2 col-2 checkIconDIV">
+
+                                        <table style="height: 100%; width: 100%;">
+
+                                            <tbody>
+
+                                                <tr>
+                                                    <td>
+
+                                                        <div class="failedIcon">
+                                                            <svg class="failedmark" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 52 52">
+                                                                <circle class="failedmark_circle" cx="26" cy="26" r="25"
+                                                                    fill="none" />
+                                                                <path class="failedmark_check" fill="none"
+                                                                    d="M14.1 14.1l23.8 23.8 m0,-23.8 l-23.8,23.8" />
+                                                            </svg>
+                                                        </div>
+
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+
+                                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-10 checkTextDIV">
+
+                                        <table style="height: 100%; width: 100%;">
+
+                                            <tbody>
+
+                                                <tr>
+
+                                                    <td style="vertical-align: middle;">
+                                                        <h5 class="lbl1 mt-3">Cancel Card Failed</h5>
+                                                        <p class="text-muted">4 May 2018, 12:59:12pm</p>
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Reference Number</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>RR232382989FH</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Card Member Name</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>Kwek Kian Sheng</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Credit Card Number</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>454454333222 (Visa Credit Card)</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Card Member Name</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>Lai Li</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Credit Card Status</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>Lost</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Date of Lost</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>01 October 2021</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Place of Lost</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>-</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Date Last Used</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>-</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Amount Last Used</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>RM 0.00</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Merchant and Location Last Used</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>-</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Replacement card required?</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>Yes</label>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 leftReference">
+                                    <label>Collection of Card</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 rightReference">
+                                    <label>Delivery to Existing Mailing Address</label>
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+                        <div class="row my-5 last-row">
+                            <div class="col-12">
+                                <a class="btn btn-dark float-start"> Print </a>
+                                <a id="thirdNext" class="btn btn-primary  float-end" href="@Url.Action("
+                                    CardSettings", "Home" )"> Done </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Note -->
+                    <div class="row my-5">
+                        <div class="alert alert-info rounded-8 shadow" role="alert">
+                            <h3>Note</h3>
+                            <ul>
+                                <li>This card cancellation service is available for the selected card number only. If
+                                    you lost all your PB Credit cards, you are required to repeat the same process for
+                                    other registered card. For card number not listed above, please call our 24 hours
+                                    Lost Card Hotline at 603-2176 8555 for assistance.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <!-- FlatPickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+    <script>
+
+        $(document).ready(function () {
+            $('.mobileNav').each(function () {
+                $(this).removeClass('active');
+            })
+
+            $('.nav-link').each(function () {
+                $(this).removeClass('active');
+            })
+
+            $('.profile').each(function () {
+                $(this).addClass('active');
+            });
+
+            $('.profileMenu').addClass('active');
+
+            $('#firstNext').on('click', function () {
+                $('#secondPage').attr('hidden', false);
+                $('#firstPage').attr('hidden', true);
+                $('#thirdPage').attr('hidden', true);
+            });
+
+            $('#secondNext').on('click', function () {
+                $('#thirdPage').attr('hidden', true);
+                Swal.fire({
+                    title: 'Confirm Cancel Card?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, cancel it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $('#thirdPage').attr('hidden', false);
+                        $('#secondPage').attr('hidden', true);
+                        $('#firstPage').attr('hidden', true);
+                        Swal.fire({
+                            title: 'Your card has been cancelled.',
+                            icon: 'success',
+                        })
+                    }
+                })
+            });
+
+
+            $("#effectiveDatePicker1").flatpickr({
+                dateFormat: 'd-M-Y'
+            });
+
+            $("#effectiveDatePicker2").flatpickr({
+                dateFormat: 'd-M-Y'
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
