@@ -1,0 +1,462 @@
+<!-- replace examplemodal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-white">
+
+            <div class="row">
+                <div class="modal-body">
+                    <div class="rightBlock row rounded-8 border-0  m-3 mt-0">
+                        <div class="col-12 pt-4">
+                            <div class="row">
+
+                                <div class="col-lg-8 col-10">
+                                    <h5 class="text-muted">Account Number : </h5> <h2 class="text-dark" id="tranHistoryModal">35720065120</h2>
+
+                                    <p class="text-muted small mb-4">
+                                        Search and view your Transaction History
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="row d-flex flex-row mb-3" id="extraFilter">
+                                <div class="col-12 row justify-content-between">
+                                    <div class="col-12 col-lg-4" id="date1">
+                                        <input type="datetime-local" class="form-control" style="background:white!important"
+                                               id="date1" placeholder="Select Date">
+                                    </div>
+                                    <div class="col-12 col-lg-4 my-2 my-lg-0 btn-group" id="advancedfilter">
+                                        <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                            More filter
+                                        </button>
+                                        <ul class="dropdown-menu " style="z-index: 3000">
+                                            <h6 class="text-muted ms-2">by months</h6>
+                                            <div class="form-check ms-2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                       id="flexCheckDefault">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    Last 1 Month
+                                                </label>
+                                            </div>
+                                            <div class="form-check ms-2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                       id="flexCheckDefault">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    Last 2 Months
+                                                </label>
+                                            </div>
+                                            <div class="form-check ms-2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                       id="flexCheckDefault">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    Last 3 Months
+                                                </label>
+                                            </div>
+                                            <div class="form-check ms-2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                       id="flexCheckDefault">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    Last 4 Months
+                                                </label>
+                                            </div>
+                                            <div class="form-check ms-2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                       id="flexCheckDefault">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    Last 5 Months
+                                                </label>
+                                            </div>
+                                            <div class="form-check ms-2">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                       id="flexCheckDefault">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    Last 6 Months
+                                                </label>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <div class="form-check form-switch col-12 d-flex justify-content-lg-end align-items-center"
+                                             id="ViewPbeTransaction">
+                                            <input class="form-check-input" type="checkbox" id="ViewPbeTransaction">
+                                            <label class="form-check-label px-2 mt-1" for="PbeTransaction">
+                                                View PBe Transaction
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div  class="row d-flex flex-row justify-content-between" id="selectType">
+                                <div class="col-12 col-lg-6">
+                                    <button hi type="button"
+                                                class="btn btn-sm border border-2 border-danger text-danger rounded-pill active"
+                                                id="unpostedtran" data-bs-toggle="button" autocomplete="on">
+                                            <i class="fas fa-check px-2" id="unpostedTranTick"></i>Unposted
+                                            Transaction
+                                        </button>
+                                </div>
+
+                            </div>
+
+                            <div class="row justify-content-center mt-4" id="table2">
+                                <!-- modal bootstrap enhanced  -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg ">
+                                        <div class="modal-content">
+                                            <div class="modal-header  bg-dark">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                    Transaction
+                                                    Details
+                                                </h5>
+                                                <button type="button" class="btn-close btn-close-white"
+                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="row">
+                                                <div class="modal-body">
+                                                    <div class="row mb-2 ms-4">
+                                                        <label for="paymentType"
+                                                               class="col-sm-4 col-form-label text-muted">
+                                                            Reference
+                                                            Number:
+                                                        </label>
+                                                        <div class="col-sm-8 text-start text-lg-end">
+                                                            <label for="message-text"
+                                                                   class="col-form-label">58321</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 ms-4">
+                                                        <label for="paymentType"
+                                                               class="col-sm-4 col-form-label text-muted">
+                                                            From
+                                                            Account:
+                                                        </label>
+                                                        <div class="col-sm-8 text-start text-lg-end">
+                                                            <label for="message-text"
+                                                                   class="col-form-label">
+                                                                534534534
+                                                                (Savings)
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-2 ms-4">
+                                                        <label for="paymentType"
+                                                               class="col-sm-4 col-form-label text-muted">
+                                                            Beneficiary
+                                                            Bank:
+                                                        </label>
+                                                        <div class="col-sm-8 text-start text-lg-end">
+                                                            <label for="message-text" class="col-form-label">
+                                                                Maybank
+                                                                Berha
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3 ms-4">
+                                                        <label for="paymentType"
+                                                               class="col-sm-4 col-form-label text-muted">
+                                                            Beneficiary
+                                                            Account
+                                                            Number:
+                                                        </label>
+                                                        <div class="col-sm-8 text-start text-lg-end">
+                                                            <label for="message-text"
+                                                                   class="col-form-label">12332322000213</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3 ms-4">
+                                                        <label for="paymentType"
+                                                               class="col-sm-4 col-form-label text-muted">
+                                                            Beneficiary
+                                                            Name:
+                                                        </label>
+                                                        <div class="col-sm-8 text-start text-lg-end">
+                                                            <label for="message-text"
+                                                                   class="col-form-label">
+                                                                MUHAMMAD AIMAN
+                                                                BIN
+                                                                ISKANDAR
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3 ms-4">
+                                                        <label for="paymentType"
+                                                               class="col-sm-4 col-form-label text-muted">
+                                                            Recipient
+                                                            Reference:
+                                                        </label>
+                                                        <div class="col-sm-8 text-start text-lg-end">
+                                                            <label for="message-text"
+                                                                   class="col-form-label">0</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3 ms-4">
+                                                        <label for="paymentType"
+                                                               class="col-sm-4 col-form-label text-muted">
+                                                            Other
+                                                            Payment Details:
+                                                        </label>
+                                                        <div class="col-sm-8">
+                                                            <label for="message-text"
+                                                                   class="col-form-label">test</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3 ms-4">
+                                                        <label for="paymentType"
+                                                               class="col-sm-4 col-form-label text-muted">Amount:</label>
+                                                        <div class="col-sm-8 text-start text-lg-end">
+                                                            <label for="message-text" class="col-form-label">
+                                                                RM
+                                                                5.00
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3 ms-4">
+                                                        <label for="paymentType"
+                                                               class="col-sm-4 col-form-label text-muted">Date/Time:</label>
+                                                        <div class="col-sm-8 text-start text-lg-end">
+                                                            <label for="message-text"
+                                                                   class="col-form-label">
+                                                                07-09-2021
+                                                                11:29:00
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3 ms-4">
+                                                        <label for="paymentType"
+                                                               class="col-sm-4 col-form-label text-muted">
+                                                            Payment
+                                                            Reference:
+                                                        </label>
+                                                        <div class="col-sm-8 text-start text-lg-end">
+                                                            <label for="message-text"
+                                                                   class="col-form-label">test</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3 ms-4">
+                                                        <label for="paymentType"
+                                                               class="col-sm-4 col-form-label text-muted">Source:</label>
+                                                        <div class="col-sm-8 text-start text-lg-end">
+                                                            <label for="message-text"
+                                                                   class="col-form-label">Mobile</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-outline-primary">Print</button>
+                                                <button type="button" class="btn btn-primary"
+                                                        data-bs-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="button" class="btn btn-outline-primary">
+                                                    Save as
+                                                    PDF
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--end-->
+                                <div class="col-12 table-responsive  mt-4">
+                                    <table id="transHistoryTable"
+                                           class="table table-responsive table-borderless table-hover p-lg-2 p-0 shadow  bg-white align-middle">
+                                        <thead class="bg-dark text-white rounded-8">
+                                            <tr>
+                                                <th class="small">Transaction Date</th>
+                                                <th class="small">Transaction Description</th>
+                                                <th class="small">Debit Amount</th>
+                                                <th class="small">Credit Amount</th>
+                                                <th class="small">Balance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>29-SEP-21</td>
+                                                <td class="title">GIRO PYMT-ATM/EFT NO:901681 GARENA SHELLS </td>
+                                                <td>RM200.00</td>
+                                                <td class="title">0</td>
+                                                <td class="text-success">RM1200.00</td>
+                                            </tr>
+                                            <tr class="pbe-data">
+                                                <td>29-SEP-21</td>
+                                                <td class="title">O	Interbank Fund Transfer</td>
+                                                <td>RM200.00</td>
+                                                <td class="title">0</td>
+                                                <td class="text-success">RM2200.00</td>
+                                            </tr>
+                                            <tr class="pbe-data">
+                                                <td>29-SEP-21</td>
+                                                <td class="title">JomPAY</td>
+                                                <td>RM200.00</td>
+                                                <td class="title">0</td>
+                                                <td class="text-success">RM1200.00</td>
+                                            </tr>
+                                            <tr class="unposted-data">
+                                                <td>29-SEP-21</td>
+                                                <td class="title">PSS SKVE (Unposted)</td>
+                                                <td>RM200.00</td>
+                                                <td class="title">0</td>
+                                                <td class="text-success">RM3200.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table hidden id="etransHistoryTable"
+                                           class="table table-borderless table-hover p-lg-2 p-0 shadow  bg-white "
+                                           style="width:100%">
+                                        <thead class="bg-dark text-white rounded-8">
+                                            <tr>
+                                                <th class="small">Transaction Date</th>
+                                                <th class="small">Transaction Type</th>
+                                                <th class="small">Transaction Reference</th>
+                                                <th class="small">Corporation Code / Name</th>
+                                                <th class="small">Bill Account Reference</th>
+                                                <th class="small">Transaction Amount</th>
+                                                <th class="small">Source</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>29-SEP-21</td>
+                                                <td class="title">-</td>
+                                                <td>829588</td>
+                                                <td class="title">-</td>
+                                                <td class="title">-</td>
+                                                <td class="text-success">RM5.06</td>
+                                                <td class="text-success">Mobile</td>
+                                            </tr>
+                                            <tr class="pbe-data">
+                                                <td>24-SEP-21</td>
+                                                <td class="title">JomPAY</td>
+                                                <td>907234</td>
+                                                <td class="title">FASHION VALET SDN BHD</td>
+                                                <td class="title">100135670</td>
+                                                <td class="text-success">RM200.00</td>
+                                                <td class="text-success">PBe</td>
+                                            </tr>
+                                            <tr class="pbe-data">
+                                                <td>10-SEP-21</td>
+                                                <td class="title">-</td>
+                                                <td>646271</td>
+                                                <td class="title">-</td>
+                                                <td class="title">-</td>
+                                                <td class="text-success">RM5.58</td>
+                                                <td class="text-success">Mobile</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary printBtn" hidden>Print</button>
+                <button type="button" class="btn btn-outline-primary csvBtn">Download CSV</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                <button type="button" hidden class="btn btn-primary">Save as PDF</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- replace examplemodal1 -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content bg-white px-4">
+            <div class="row pb-3 border-bottom">
+                <div class="col-12 text-center pb-4">
+                    <img src="~/Images/WebDecoratives/tick-success-svgrepo-com.svg" class="img-fluid" style="width:85px; margin-top:-40px" />
+                </div>
+                <div class="col-12 text-center">
+                    <h3>RM 5.00</h3>
+                    <p class="text-muted small">07-SEPT-2021</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="modal-body ">
+                    <div class="row ">
+                        <label for="paymentType" class="col-sm-5 text-muted text-start">Reference Number:</label>
+                        <div class="col-sm-7  text-start text-lg-end">
+                            <label for="message-text" class="col-form-label pt-0">58321</label>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <label for="paymentType" class="col-sm-5 text-muted text-start">From Account:</label>
+                        <div class="col-sm-7 text-start text-lg-end">
+                            <label for="message-text" class="col-form-label pt-0">432432324 (Savings)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="paymentType" class="col-sm-5 text-start text-muted">Beneficiary Bank:</label>
+                        <div class="col-sm-7 text-start text-lg-end">
+                            <label for="message-text" class="col-form-label pt-0">Maybank Berhad</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="paymentType" class="col-sm-5 text-start text-muted">Beneficiary Account Number:</label>
+                        <div class="col-sm-7 text-start text-lg-end">
+                            <label for="message-text" class="col-form-label pt-0">12332322000213</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="paymentType" class="col-sm-5 text-start text-muted">Beneficiary Name:</label>
+                        <div class="col-sm-7 text-start text-lg-end">
+                            <label for="message-text" class="col-form-label pt-0">MUHAMMAD AIMAN BIN ISKANDAR</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="paymentType" class="col-sm-5 text-start text-muted">Recipient Reference: </label>
+                        <div class="col-sm-7 text-start text-lg-end">
+                            <label for="message-text" class="col-form-label pt-0">0</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="paymentType" class="col-sm-5 text-start text-muted">Other Payment Details:</label>
+                        <div class="col-sm-7 text-start text-lg-end">
+                            <label for="message-text" class="col-form-label pt-0">test</label>
+                        </div>
+                    </div>
+                   <div class="row">
+                            <label for="paymentType" class="col-sm-5 text-start text-muted">Amount:</label>
+                            <div class="col-sm-7 text-start text-lg-end">
+                                <label for="message-text" class="col-form-label pt-0">RM 5.00</label>
+                            </div>
+                        </div>
+                   <div class="row">
+                            <label for="paymentType" class="col-sm-5 text-start text-muted">Date/Time:</label>
+                            <div class="col-sm-7 text-start text-lg-end">
+                                <label for="message-text" class="col-form-label pt-0">07-09-2021 11:29:00</label>
+                            </div>
+                        </div>
+                    <div class="row">
+                        <label for="paymentType" class="col-sm-5 text-start text-muted">Payment Reference:</label>
+                        <div class="col-sm-7 text-start text-lg-end">
+                            <label for="message-text" class="col-form-label pt-0">test</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="paymentType" class="col-sm-5 text-start text-muted">Source:</label>
+                        <div class="col-sm-7 text-start text-lg-end">
+                            <label for="message-text" class="col-form-label pt-0">Mobile</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-sm btn-outline-primary">Print</button>
+                <button type="button" class="btn btn-sm btn-outline-primary">Save as PDF</button>
+                <button type="button" class="btn btn-sm btn-primary" id="secondmodalClose">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
