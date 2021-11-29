@@ -1,0 +1,272 @@
+<div hidden id="thirdPage" class="col-12 col-lg-8 px-4">
+
+
+
+    <div class="row mb-2">
+        <h4 class="col-sm-12 col-form-label">Credit Card</h4>
+        <div class="info col-sm-12 my-1">
+            <input type="text" class="form-control" value="4553880900004118" disabled>
+        </div>
+    </div>
+
+    <div class="row mb-1">
+        <h4 class="col-sm-12 col-form-label">Email address</h4>
+        <div class="info col-sm-12 my-1">
+            <input type="text" class="form-control" value="nhr@gmail.com" disabled>
+        </div>
+    </div>
+    <div class="row mb-2 justify-content-between">
+
+        <label for="tranAmount" class="col-sm-12 col-form-label">OTP</label>
+
+        <div class="col-7 col-sm-8 col-md-9 col-lg-8 col-xl-9">
+            <input type="text" class="form-control" id="PAC">
+        </div>
+
+        <div class="col-5 col-sm-4 col-md-3 col-lg-4 col-xl-3 ps-0 text-end text-lg-center mt-0">
+            <a class="btn btn-info reqPacBtn text-white float-lg-end">Request OTP</a>
+        </div>
+
+        <div class="description mt-1">
+            <span>Didn't get the code</span>
+            <a hidden href="#" id="ResendPAC" class="text-decoration-none ms-3 mb-2">Resend(1/3)</a>
+            <p class="text-muted">A 6 digit OTP will be sent to your registered mobile phone
+                number
+                *****6168. Please click "Request PAC" if you wish to proceed</p>
+        </div>
+
+        <div class="mt-0">
+
+
+        </div>
+    </div>
+
+    <div class="row mt-2 table-responsive">
+        <table id="FD"
+            class="table table-responsive table-borderless table-hover p-lg-2 p-0 shadow  bg-white align-middle">
+            <thead class="bg-dark text-white rounded-8">
+                <tr>
+                    <th class="small">
+                        Plan
+                    </th>
+                    <th class="small">Card Issuer</th>
+                    <th class="small">Other Bank's Credit Card No.</th>
+                    <th class="small">Transfer Amount(RM)</th>
+                    <th class="small">Interest Charge/Management Fee</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A: U 1.00% for 6 months</td>
+                    <td class="title">Citibank Berhad</td>
+                    <td class="title">4902970001127914</td>
+                    <td>100.00</td>
+                    <td class="title">1.0</td>
+
+                </tr>
+                <tr>
+                    <td>Total Amount (RM)</td>
+                    <td class="title"></td>
+                    <td class="title"></td>
+                    <td>100.00</td>
+                    <td class="title">1.00</td>
+
+                </tr>
+                <tr>
+                    <td class="text">Grand Total (RM)</td>
+                    <td class="title">101.00</td>
+                    <td class="title"></td>
+                    <td class="text"></td>
+                    <td class=""></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="row my-5 last-row">
+        <div class="col-12">
+            <a class="btn btn-dark float-start me-2" href="@Url.Action(" ChequeBook", "Home" )">
+                Back
+            </a>
+            <a class="btn btn-dark float-start" href="@Url.Action(" ChequeBook", "Home" )">
+                Cancel
+            </a>
+            <a id="secondNext" class="btn btn-primary  float-end ">Confirm</a>
+        </div>
+    </div>
+
+</div>
+
+<div hidden id="fourthPage" class="col-12 col-lg-8 mt-1 px-4 mb-3">
+    <div class="p-4 shadow bg-white rounded-8 mb-3">
+
+        <div class="row logoRow mb-4">
+
+            <div class="col-2 checkIconDIV">
+
+                <div class="successIcon text-start">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                    </svg>
+                </div>
+
+            </div>
+
+            <div class="col-10 checkTextDIV">
+                <h5>Your Balance Transfer has been approved in principle.</h5>
+
+                <p class="text-muted">4 May 2018, 12:59:12pm</p>
+            </div>
+
+        </div>
+        <div class="row detailsRow">
+            <div class="col-12">
+                <p class="text-muted">Please check your selected credit card account after 3
+                    business days for your successful/ unsuccessful Balance Transfer request.
+                    Please take note of the Reference Number for future correspondence. An email
+                    will be sent to your email address and PBe mailbox.</p>
+            </div>
+        </div>
+
+        <div class="row detailsRow">
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-start text-muted leftReference">
+                <label>Reference Number</label>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-start text-sm-end rightReference">
+                <label>437076</label>
+            </div>
+
+        </div>
+
+        <div class="row detailsRow">
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-start text-muted leftReference">
+                <label>Credit Card</label>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-start text-sm-end rightReference">
+                <label>45538890000004118</label>
+            </div>
+
+        </div>
+
+        <div class="row detailsRow">
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-start text-muted leftReference">
+                <label>Email Address</label>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-start text-sm-end rightReference">
+                <label>nhr@mail.com</label>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="row mb-2">
+        <table id="FD"
+            class="table table-responsive table-borderless table-hover p-lg-2 p-0 shadow  bg-white align-middle">
+            <thead class="bg-dark text-white rounded-8">
+                <tr>
+                    <th class="small">
+                        Plan
+                    </th>
+                    <th class="small">Card Issuer</th>
+                    <th class="small">Other Bank's Credit Card No.</th>
+                    <th class="small">Transfer Amount(RM)</th>
+                    <th class="small">Interest Charge/Management Fee</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A: U 1.00% for 6 months</td>
+                    <td class="title">Citibank Berhad</td>
+                    <td class="title">4902970001127914</td>
+                    <td>100.00</td>
+                    <td class="title">1.0</td>
+
+                </tr>
+                <tr>
+                    <td>Total Amount (RM)</td>
+                    <td class="title"></td>
+                    <td class="title"></td>
+                    <td>100.00</td>
+                    <td class="title">1.00</td>
+
+                </tr>
+                <tr>
+                    <td class="text">Grand Total (RM)</td>
+                    <td class="title">101.00</td>
+                    <td class="title"></td>
+                    <td class="text"></td>
+                    <td class=""></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row my-5 last-row">
+        <div class="col-12">
+            <a class="btn btn-dark float-start" onclick="window.print()"> Print </a>
+            <a id="secondNext" class="btn btn-primary  float-end" href="@Url.Action(" Cheque", "Home" )">
+                Done
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- sweetalert -->
+<script>
+    $('#secondNext').on('click', function () {
+        Swal.fire({
+            title: 'Do you want to approve the Balance Transfer?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Submit',
+            allowOutsideClick: false,
+            customClass: {
+                title: 'alertFontStyle'
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Your Balance Transfer has been submitted!',
+                    icon: 'success',
+                    customClass: {
+                        title: 'alertFontStyle'
+                    }
+                }).then(function () {
+                    $('#fourthPage').attr('hidden', false);
+                    $('#thirdPage').attr('hidden', true);
+                    $('#secondPage').attr('hidden', true);
+                    $('#firstPage').attr('hidden', true);
+                });
+            }
+        })
+
+    });
+
+    $('#thirdNext').on('click', function () {
+        Swal.fire({
+            title: 'Your Request Successfully Submitted!',
+            icon: 'success',
+            customClass: {
+                title: 'alertFontStyle'
+            }
+        }).then(function () {
+            $('#fourthPage').attr('hidden', false);
+            $('#thirdPage').attr('hidden', true);
+            $('#secondPage').attr('hidden', true);
+            $('#firstPage').attr('hidden', true);
+        });
+    });
+
+</script>
