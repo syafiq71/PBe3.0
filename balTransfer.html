@@ -1,0 +1,1083 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!-- Style-Puvan -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="css/main2.css">
+    <!-- <link rel="stylesheet" href="css/andrewStyle.css"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+
+    <!-- DataTable CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
+    <title>Balance Transfer</title>
+
+    <style>
+        /* success */
+        .checkmark__circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: #7ac142;
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+        }
+
+        .checkmark {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 2;
+            stroke: #fff;
+            stroke-miterlimit: 10;
+            margin: 10% auto;
+            box-shadow: inset 0px 0px 0px #7ac142;
+            animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+        }
+
+        .checkmark__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+        }
+
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: 0
+            }
+        }
+
+        @keyframes scale {
+
+            0%,
+            100% {
+                transform: none
+            }
+
+            50% {
+                transform: scale3d(1.1, 1.1, 1)
+            }
+        }
+
+        @keyframes fill {
+            100% {
+                box-shadow: inset 0px 0px 0px 30px #7ac142
+            }
+        }
+
+        /* failed */
+        .failedmark {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 2;
+            stroke: #fff;
+            stroke-miterlimit: 10;
+            box-shadow: inset 0px 0px 0px #ff0000;
+            animation: fill2 .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+        }
+
+        .failedmark_circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: #ff0000;
+            fill: none;
+            animation: stroke2 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+        }
+
+        .failedmark_check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke2 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+        }
+
+        @keyframes stroke2 {
+            100% {
+                stroke-dashoffset: 0
+            }
+        }
+
+        @keyframes scale {
+
+            0%,
+            100% {
+                transform: none
+            }
+
+            50% {
+                transform: scale3d(1.1, 1.1, 1)
+            }
+        }
+
+        @keyframes fill2 {
+            100% {
+                box-shadow: inset 0px 0px 0px 30px #ff0000
+            }
+        }
+
+        /* 11-11-2021 */
+
+        @media (max-width: 576px) {
+
+            #tokenText,
+            #notiText {
+                font-size: 14px;
+            }
+
+            #reqPacBtn {
+                width: 100%;
+            }
+
+            /* #pacTextandBtn {
+                justify-content: space-between;
+            } */
+
+            .checkTextDIV h5 {
+                font-size: 16px;
+                margin-left: 20px;
+            }
+
+            .checkTextDIV p {
+                font-size: 13px;
+                margin-left: 20px;
+            }
+        }
+
+        @media (min-width: 576px) {
+
+            #tokenText,
+            #notiText,
+            #secureText,
+            #pacText {
+                font-size: 16px;
+            }
+
+            #reqPacBtn {
+                width: 100%;
+            }
+
+            .checkTextDIV {
+                margin-top: 10px;
+            }
+
+            .checkTextDIV h5 {
+                font-size: 18px;
+            }
+
+            .checkTextDIV p {
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width: 768px) {
+
+            #tokenText,
+            #notiText,
+            #secureText,
+            #pacText {
+                font-size: 16px;
+            }
+
+            .checkTextDIV h5 {
+                font-size: 20px;
+            }
+
+            .checkTextDIV p {
+                font-size: 15px;
+            }
+
+
+        }
+
+        @media (min-width: 992px) {
+
+            #notiText {
+                margin-top: 6px;
+            }
+
+            .checkTextDIV h5 {
+                font-size: 20px;
+            }
+
+            .checkTextDIV p {
+                font-size: 15px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+
+            .checkTextDIV h5 {
+                font-size: 22px;
+            }
+
+            .checkTextDIV p {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 1400px) {
+
+            #tokenText,
+            #notiText,
+            #secureText,
+            #pacText {
+                font-size: 18px;
+            }
+        }
+
+        /* 16-11-2021 */
+        @media (min-width: 992px) {
+            .pictureRow {
+                position: fixed;
+                top: 100;
+                right: 100;
+            }
+
+            .formRow {
+                position: relative;
+                top: 0;
+                right: 200px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="d-none d-lg-block" style="height:5vh;"></div>
+
+    <div class="container gx-1 gx-lg-0 mt-3 mt-lg-5 my-auto">
+
+        <div class="row mt-2 justify-content-center">
+
+            <div class="col-lg-8 formRow">
+
+                <div class="row justify-content-center ">
+
+                    <div class="col-12 col-lg-5 col-xl-6 p-5 p-lg-0 text-center">
+                        <img class="mb-4 img-fluid " style="width:100px;" src="~/Images/WebsiteImages/checkbook.png" />
+                        <h3 class="mb-2">Balance Transfer</h3>
+                        <p>
+                            Transfer funds from your current card to your new card.
+                        </p>
+                    </div>
+
+                    <div id="firstPage" class="col-12 col-lg-8 px-4">
+
+                        <form>
+
+                            <div class="row mb-2">
+
+                                <label for="tranAmount" class="col-sm-12 col-form-label">Select your card</label>
+
+                                <div class="col-sm-12 mb-2">
+
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Please select</option>
+                                        <option value="">4553880900004118</option>
+                                        <option value="">4813870010078108</option>
+                                        <option value="">5391720900521104</option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                            <!-- <div class="row my-5 my-xxl-5 last-row">
+                            <div class="col-12">
+                                <a class="btn btn-dark float-start" href="@Url.Action(" Cheque", "Home" )">
+                                    Back
+                                </a>
+                                <a id="firstNext" class="btn btn-primary  float-end"> Next </a>
+                            </div>
+                        </div> -->
+
+                            <div class="row my-5 last-row">
+                                <div class="col-12">
+                                    <a class="btn btn-dark col-5 col-sm-3 me-sm-2 col-lg-5 col-xxl-3"
+                                        href="@Url.Action(" Cheque", "Home" )"> Back
+                                    </a>
+                                    <a
+                                        class="btn btn-outline-primary btnReset col-5 float-end col-sm-3 float-sm-none col-lg-5 float-lg-end float-xxl-none col-xxl-3">
+                                        Clear </a>
+                                    <a id="firstNext"
+                                        class="btn btn-primary col-12 col-sm-3 mt-2 mt-sm-0 float-sm-end col-lg-12 mt-lg-2 col-xxl-3 mt-xxl-0">
+                                        Next </a>
+                                </div>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+
+                    <div hidden id="secondPage" class="col-12 col-lg-8 px-4">
+
+                        <div class="row mb-2">
+                            <h4 class="col-sm-12 col-form-label">Card Number</h4>
+                            <div class="info col-sm-12 my-1">
+                                <input type="text" class="form-control" value="3001198511" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <h4 class="col-sm-12 col-form-label">Available Credit Limit for Balance Transfer</h4>
+                            <div class="info col-sm-12 my-1">
+                                <input type="text" class="form-control" value="RM 80,000.00" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <h4 class="col-sm-12 col-form-label">Email Address</h4>
+                            <div class="info col-sm-12 my-1">
+                                <input type="text" class="form-control" value="nhr@mail.com" disabled>
+                                <p class="text-muted font-sm">Please change your email address if the email address
+                                    stated above differs from your current email address. To change your email address,
+                                    <span><a class="text-danger" href="#">click here.</a></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2 px-3">
+                            <button id="addTransferRow"
+                                class="btn border border-1 border-danger btn-sm font-semibold text-danger float-left col-3 my-2"><span
+                                    class="pe-1"><i class="fas fa-plus"></i></span> Add Transfer</button>
+                            <div class="table-responsive">
+                                <table id="balanceTransferTable" class="col-12 table table-borderless">
+                                    <thead class="table-dark">
+                                        <th>Plan</th>
+                                        <th>Card Issuer</th>
+                                        <th>Other Bank's Credit Card No.</th>
+                                        <th>Transfer Amount (RM)</th>
+                                    </thead>
+                                    <tbody class="bg-white">
+                                        <tr class="balanceTransferTableRow">
+                                            <td>
+                                                <select class="form-select" aria-label="Plan">
+                                                    <option selected>Select a plan</option>
+                                                    <option value="A">A : U 1.00% for 6 months</option>
+                                                    <option value="B">B : U 0% for 6 months</option>
+                                                    <option value="C">C : U 11.00% for 12 months</option>
+                                                    <option value="E">E : U 8.00% for 36 months</option>
+                                                    <option value="F">F : U 0% for 48 months</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select class="form-select" aria-label="CardIssuer">
+                                                    <option selected>Select a Bank</option>
+                                                    <option value="">Affin Bank Berhad</option>
+                                                    <option value="">Affin Islamic Bank Berhad</option>
+                                                    <option value="">Al-Rajhi Banking and Investment Corp (M) Bhd
+                                                    </option>
+                                                    <option value="">Alliance Bank Malaysia Berhad</option>
+                                                    <option value="">AmBank (Malaysia) Berhad</option>
+                                                    <option value="">AmBank Islamic Berhad</option>
+                                                    <option value="">BNP Paribas (Malaysia) Berhad</option>
+                                                    <option value="">Bangkok Bank Berhad</option>
+                                                    <option value="">Bank Islam Malaysia</option>
+                                                    <option value="">Bank Muamalat Malaysia Berhad</option>
+                                                    <option value="">Bank Pertanian Malaysia (AgroBank)</option>
+                                                    <option value="">Bank Simpanan Nasional Berhad</option>
+                                                    <option value="">Bank of America Malaysia Berhad</option>
+                                                    <option value="">Bank of China (Malaysia) Berhad</option>
+                                                    <option value="">CIMB Bank Berhad</option>
+                                                    <option value="">CIMB Islamic Bank Berhad</option>
+                                                    <option value="">China Construction Bank (Malaysia) Berhad</option>
+                                                    <option value="">Citibank Berhad</option>
+                                                    <option value="">Deutsche Bank (Malaysia) Berhad</option>
+                                                    <option value="">Finexus Cards Sdn. Bhd.</option>
+                                                    <option value="">HSBC Amanah Malaysia Berhad</option>
+                                                    <option value="">HSBC Bank Malaysia Berhad</option>
+                                                    <option value="">Hong Leong Bank Berhad</option>
+                                                    <option value="">Hong Leong Islamic Bank Berhad</option>
+                                                    <option value="">Industrial and Commercial Bank of China (ICBC)
+                                                    </option>
+                                                    <option value="">J.P. Morgan Chase Bank Berhad</option>
+                                                    <option value="">Kuwait Finance House (Malaysia) Berhad</option>
+                                                    <option value="">MBSB Bank Berhad</option>
+                                                    <option value="">MUFG Bank (Malaysia) Berhad</option>
+                                                    <option value="">Maybank</option>
+                                                    <option value="">Maybank Islamic Berhad</option>
+                                                    <option value="">HSBC Bank Malaysia Berhad</option>
+                                                    <option value="">Mizuho Bank (Malaysia) Berhad</option>
+                                                    <option value="">OCBC Bank (Malaysia) Berhad</option>
+                                                    <option value="">OCBC Al-Amin Bank Berhad</option>
+                                                    <option value="">RHB Bank Berhad</option>
+                                                    <option value="">RHB Islamic Bank Berhad</option>
+                                                    <option value="">Standard Chartered Bank Malaysia Berhad</option>
+                                                    <option value="">Standard Chartered Saadiq Berhad</option>
+                                                    <option value="">Sumitomo Mitsui Banking Corporation (M) Berhad
+                                                    </option>
+                                                    <option value="">United Overseas Bank (Malaysia) Berhad</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input class="form-control number-input" type="number"
+                                                    placeholder="Credit Card No."
+                                                    aria-label="Other Bank's Credit Card No.">
+                                            </td>
+                                            <td>
+                                                <input class="form-control number-input" type="number"
+                                                    placeholder="Transfer Amount" aria-label="Transfer Amount (RM)">
+                                            </td>
+                                            <td class="bg-light">
+                                                <button
+                                                    class="deleteTableRow d-none bg-transparent border-0 text-primary">
+                                                    <span><i class="fas fa-trash"></i>
+                                                    </span>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="declaration-lg d-none d-lg-block">
+                                <div id="declarationCheckboxCon" class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="declarationCheckbox">
+                                    <label class="form-check-label font-semibold" for="declarationCheckbox">
+                                        Declaration & Agreement
+                                    </label>
+                                </div>
+                                <div class="declarationText">
+                                    <p class="ps-0 pt-1 text-muted text-justify">I hereby
+                                        authorise Public
+                                        Bank
+                                        Berhad (PBB) / Public Islamic Bank Berhad (PIBB) to proceed with the transfer of
+                                        my
+                                        Credit Card outstanding balance specified above to my PB/PIB Visa / PB/PIB
+                                        MasterCard
+                                        Credit Card Account. I confirm that this transfer executed by PBB/PIBB is based
+                                        on
+                                        my
+                                        instructions has no implication whatsoever on my existing relationship with the
+                                        specifed
+                                        card issuer. I have read and understood the contents herein and agree and
+                                        undertake
+                                        to
+                                        be bound by these Terms and Conditions giverning the PB BALANCE TRANSFER
+                                        services.
+                                        <br>
+                                    <p class=" ps-0"> For full Terms and Conditions,
+                                        <span><a class="text-danger" href="#">click here.</a></span>
+                                    </p>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="accordion d-block d-lg-none mt-4" id="declarationAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            Declaration & Agreement
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="my-5 mt-3 col-12">
+                                <div class="col-12">
+                                    <a class="btn btn-dark float-start" href="@Url.Action(" ChequeBook", "Home" )">
+                                        Back
+                                    </a>
+
+                                    <button type="button" id="secondNext" class="btn btn-primary  float-end" disabled>
+                                        Confirm </a>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div hidden id="thirdPage" class="col-12 col-lg-8 px-4">
+
+
+
+                        <div class="row mb-2">
+                            <h4 class="col-sm-12 col-form-label">Credit Card</h4>
+                            <div class="info col-sm-12 my-1">
+                                <input type="text" class="form-control" value="4553880900004118" disabled>
+                            </div>
+                        </div>
+
+                        <div class="row mb-1">
+                            <h4 class="col-sm-12 col-form-label">Email address</h4>
+                            <div class="info col-sm-12 my-1">
+                                <input type="text" class="form-control" value="nhr@gmail.com" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-2 justify-content-between">
+
+                            <label for="tranAmount" class="col-sm-12 col-form-label">OTP</label>
+
+                            <div class="col-7 col-sm-8 col-md-9 col-lg-7 col-xl-8">
+                                <input type="text" class="form-control" id="PAC">
+                            </div>
+
+                            <div class="col-5 col-sm-4 col-md-3 col-lg-5 col-xl-4 ps-0 text-end text-lg-center mt-0">
+                                <a class="btn btn-info reqPacBtn text-white float-lg-end">Request OTP</a>
+                            </div>
+
+                            <div class="description mt-1">
+                                <span>Didn't get the code?</span>
+                                <a hidden href="#" id="ResendPAC" class="text-decoration-none ms-3 mb-2">Resend(1/3)</a>
+                                <p class="text-muted">A 6 digit OTP will be sent to your registered mobile phone
+                                    number
+                                    *****6168. Please click "Request PAC" if you wish to proceed</p>
+                            </div>
+
+                            <div class="mt-0">
+
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-2 table-responsive">
+                            <table id="FD"
+                                class="table table-responsive table-borderless table-hover p-lg-2 p-0 shadow  bg-white align-middle">
+                                <thead class="bg-dark text-white rounded-8">
+                                    <tr>
+                                        <th class="small">
+                                            Plan
+                                        </th>
+                                        <th class="small">Card Issuer</th>
+                                        <th class="small">Other Bank's Credit Card No.</th>
+                                        <th class="small">Transfer Amount(RM)</th>
+                                        <th class="small">Interest Charge/Management Fee</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>A: U 1.00% for 6 months</td>
+                                        <td>Citibank Berhad</td>
+                                        <td>4902970001127914</td>
+                                        <td>100.00</td>
+                                        <td>1.0</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Total Amount (RM)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>100.00</td>
+                                        <td>1.00</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Grand Total (RM)</td>
+                                        <td>101.00</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div class="row my-5 last-row">
+                            <div class="col-12">
+                                <a class="btn btn-dark float-start me-2" href="@Url.Action(" ChequeBook", "Home" )">
+                                    Back
+                                </a>
+                                <a class="btn btn-dark float-start" href="@Url.Action(" ChequeBook", "Home" )">
+                                    Cancel
+                                </a>
+                                <a id="thirdNext" class="btn btn-primary  float-end ">Confirm</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div hidden id="fourthPage" class="col-12 col-lg-8 mt-1 px-4 mb-3">
+                        <div class="p-4 shadow bg-white rounded-8 mb-3">
+
+                            <div class="row logoRow mb-4">
+
+                                <div class="col-2 checkIconDIV">
+
+                                    <div class="successIcon text-start">
+                                        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                                            <path class="checkmark__check" fill="none"
+                                                d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                                        </svg>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-10 checkTextDIV">
+                                    <h5>Your Balance Transfer has been approved in principle.</h5>
+
+                                    <p class="text-muted">4 May 2018, 12:59:12pm</p>
+                                </div>
+
+                            </div>
+                            <div class="row detailsRow">
+                                <div class="col-12">
+                                    <p class="text-muted">Please check your selected credit card account after 3
+                                        business days for your successful/ unsuccessful Balance Transfer request.
+                                        Please take note of the Reference Number for future correspondence. An email
+                                        will be sent to your email address and PBe mailbox.</p>
+                                </div>
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-start text-muted leftReference">
+                                    <label>Reference Number</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-start text-sm-end rightReference">
+                                    <label>437076</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-start text-muted leftReference">
+                                    <label>Credit Card</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-start text-sm-end rightReference">
+                                    <label>45538890000004118</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row detailsRow">
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-start text-muted leftReference">
+                                    <label>Email Address</label>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-start text-sm-end rightReference">
+                                    <label>nhr@mail.com</label>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <div class="row mb-2">
+                            <table id="FD"
+                                class="table table-responsive table-borderless table-hover p-lg-2 p-0 shadow  bg-white align-middle">
+                                <thead class="bg-dark text-white rounded-8">
+                                    <tr>
+                                        <th class="small">
+                                            Plan
+                                        </th>
+                                        <th class="small">Card Issuer</th>
+                                        <th class="small">Other Bank's Credit Card No.</th>
+                                        <th class="small">Transfer Amount(RM)</th>
+                                        <th class="small">Interest Charge/Management Fee</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>A: U 1.00% for 6 months</td>
+                                        <td>Citibank Berhad</td>
+                                        <td>4902970001127914</td>
+                                        <td>100.00</td>
+                                        <td>1.00</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Total Amount (RM)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>100.00</td>
+                                        <td>1.00</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Grand Total (RM)</td>
+                                        <td>101.00</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="row my-5 last-row">
+                            <div class="col-12">
+                                <a class="btn btn-dark float-start" onclick="window.print()"> Print </a>
+                                <a id="secondNext" class="btn btn-primary  float-end" href="@Url.Action("
+                                    Cheque", "Home" )">
+                                    Done
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="alert alert-info col-12 col-sm-11 col-xxl-18 col-lg-8 rounded-8 shadow-sm my-5 px-3"
+                        role="alert">
+                        <b>Note</b><br>
+                        <ul>
+                            <div id="firstNotes">
+                                <li>
+                                    Only Active principal credit card added to your PBe account will be displayed.
+                                </li>
+                                <li>If the card is not listed, please add card at Profile Maintenance section,
+                                    manage
+                                    profile, add/delete accounts.</li>
+                            </div>
+                            <div id="secondNotes" hidden>
+                                <li>Other bank's credit card must belong to the principal cardmember</li>
+                                <li>Third party creit card number is not allowed.</li>
+                                <li>Reference for Balance Transfer plan
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-bordered border-dark">
+                                            <thead class="table-dark">
+                                                <th>Plan</th>
+                                                <th>Tenure</th>
+                                                <th>Interest Charge / Management Fee</th>
+                                                <th>Minimum Transfer Amount per Bank (RM)</th>
+                                            </thead>
+                                            <tbody class="table-light">
+                                                <tr>
+                                                    <td>
+                                                        A
+                                                    </td>
+                                                    <td>
+                                                        6
+                                                    </td>
+                                                    <td>
+                                                        1.00%
+                                                    </td>
+                                                    <td>
+                                                        100.00 - 600.00
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        B
+                                                    </td>
+                                                    <td>
+                                                        6
+                                                    </td>
+                                                    <td>
+                                                        0%
+                                                    </td>
+                                                    <td>
+                                                        500.00 - 1,000.00
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        C
+                                                    </td>
+                                                    <td>
+                                                        12
+                                                    </td>
+                                                    <td>
+                                                        11.00%
+                                                    </td>
+                                                    <td>
+                                                        1,000.00 - 3,000.00
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        E
+                                                    </td>
+                                                    <td>
+                                                        36
+                                                    </td>
+                                                    <td>
+                                                        8.00%
+                                                    </td>
+                                                    <td>
+                                                        6,000.00
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        F
+                                                    </td>
+                                                    <td>
+                                                        48
+                                                    </td>
+                                                    <td>
+                                                        0%
+                                                    </td>
+                                                    <td>
+                                                        8,000.00
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    U = Upfront interest charge
+                                </li>
+                            </div>
+
+
+
+
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-lg-4 last-row p-4 mt-5 p-sm-2 text-center pictureRow">
+                    <img src="~/Images/WebsiteImages/register-win-pbe-login02.jpg" class="img-fluid " />
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+        <!-- J-Query -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <!-- MultiSelect Choices JS-->
+        <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+
+        <!-- DataTable JS -->
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                changeDeclarationLayout();
+
+                $(window).resize(function () {
+                    changeDeclarationLayout();
+                });
+
+                function changeDeclarationLayout() {
+                    if (window.innerWidth < 992) {
+                        $('.declarationText').appendTo('#declarationAccordion .accordion-body');
+                        $('#declarationCheckboxCon').find('label').text('I Agree');
+                        $('#declarationCheckboxCon').appendTo('#declarationAccordion .accordion-body');
+                    } else {
+                        $('#declarationCheckboxCon').find('label').text('Declaration & Agreement');
+                        $('#declarationCheckboxCon').appendTo('.declaration-lg');
+                        $('.declarationText').appendTo('.declaration-lg');
+
+
+                    }
+                }
+
+                $("#declarationCheckbox").change(function () {
+                    if ($(this).is(":checked")) {
+                        $("#secondNext").attr('disabled', false);
+                    } else {
+                        $("#secondNext").attr('disabled', true);
+                    }
+                });
+                $("#addTransferRow").click(function () {
+                    var rowCount = $("#balanceTransferTable >tbody >tr").length;
+                    checkAddTransferBtn(rowCount, true);
+                    if (rowCount < 5) {
+
+                        var clonedEl = $(".balanceTransferTableRow:last").clone();
+                        $(clonedEl).find('input').val('');
+                        $(clonedEl).children().find('.deleteTableRow').removeClass('d-none');
+                        $(clonedEl).insertAfter(".balanceTransferTableRow:last");
+                    }
+                });
+
+                function checkAddTransferBtn(rowLength, adding) {
+                    if (adding) {
+                        if (rowLength < 4) {
+                            $("#addTransferRow").attr('disabled', false);
+                        } else {
+                            $("#addTransferRow").attr('disabled', true);
+                        }
+                    } else {
+                        if (rowLength < 5) {
+                            $("#addTransferRow").attr('disabled', false);
+                        } else {
+                            $("#addTransferRow").attr('disabled', true);
+                        }
+                    }
+
+                }
+
+                $(document).on('click', '.deleteTableRow', function () {
+                    $(this).parents(".balanceTransferTableRow").remove();
+                    var rowCount = $("#balanceTransferTable >tbody >tr").length;
+                    checkAddTransferBtn(rowCount, false);
+                });
+
+
+                $('.mobileNav').each(function () {
+                    $(this).removeClass('active');
+                });
+
+                $('.nav-link').each(function () {
+                    $(this).removeClass('active');
+                });
+
+                $('.profile').each(function () {
+                    $(this).addClass('active');
+                });
+
+                $('.profileMenu').addClass('active');
+
+                $('.reqPacBtn').on('click', function () {
+                    console.log('test');
+                    Swal.fire(
+                        'OTP is Sent!',
+                        'OTP sent to your phone number 012 - * * * * 123',
+                        'success'
+                    )
+                });
+
+                $('.btnReset').on('click', function () {
+                    $('form')[0].reset();
+                });
+
+                $('#firstNext').on('click', function () {
+                    $('#secondPage').attr('hidden', false);
+                    $('#thirdPage').attr('hidden', true);
+
+
+                    $('#firstPage').attr('hidden', true);
+                    $('#fourthPage').attr('hidden', true);
+
+                    $("#firstNotes").attr('hidden', true);
+                    $("#secondNotes").attr('hidden', false);
+                });
+
+                $('#thirdNext').on('click', function () {
+                    Swal.fire({
+                        title: 'Do you want to approve the Balance Transfer?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Submit',
+                        allowOutsideClick: false,
+                        customClass: {
+                            title: 'alertFontStyle'
+                        }
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire({
+                                title: 'Your Balance Transfer has been submitted!',
+                                icon: 'success',
+                                customClass: {
+                                    title: 'alertFontStyle'
+                                }
+                            }).then(function () {
+                                $('#fourthPage').attr('hidden', false);
+                                $('#thirdPage').attr('hidden', true);
+                                $('#secondPage').attr('hidden', true);
+                                $('#firstPage').attr('hidden', true);
+                            });
+                        }
+                    })
+
+                });
+
+                $('#secondNext').on('click', function () {
+                    $('#fourthPage').attr('hidden', true);
+                    $('#thirdPage').attr('hidden', false);
+                    $('#secondPage').attr('hidden', true);
+                    $('#firstPage').attr('hidden', true);
+                    $('.alert').attr('hidden', true);
+                });
+
+            });
+
+            // enhanced ui for authentication script
+
+            $("#auth").change(function () {
+                console.log("test");
+                var cases = $("#auth option:selected").val();
+
+                if (cases == "pac") {
+                    $("#PAC").removeClass("d-none");
+                    $("#secure").addClass("d-none");
+                    $("#noti").addClass("d-none");
+                    $("#token").addClass("d-none");
+                }
+                if (cases == "token") {
+                    $("#token").removeClass("d-none");
+                    $("#PAC").addClass("d-none");
+                    $("#secure").addClass("d-none");
+                    $("#noti").addClass("d-none");
+                }
+                if (cases == "secure") {
+                    $("#secure").removeClass("d-none");
+                    $("#PAC").addClass("d-none");
+                    $("#token").addClass("d-none");
+                    $("#noti").addClass("d-none");
+                }
+                if (cases == "noti") {
+                    $("#noti").removeClass("d-none");
+                    $("#PAC").addClass("d-none");
+                    $("#token").addClass("d-none");
+                    $("#secure").addClass("d-none");
+                }
+            }
+            );
+
+            var progressBar = $('.progress-bar');
+            var progressNumber = 0;
+
+            setInterval(function () {
+                progressNumber++;
+                progressBar.css('width', progressNumber + '%');
+                progressBar.attr('aria-valuenow', progressNumber);
+            }, 500);
+
+        </script>
+
+</body>
+
+</html>
